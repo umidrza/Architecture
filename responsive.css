@@ -1,0 +1,39 @@
+@media screen and (max-width: 425px) {
+    .container {
+        max-width: 90%;
+    }
+
+    article, .partners, .posts, .post, .footer, footer ul{
+        grid-template-columns: 100%;
+    }
+
+    nav{
+        height: 100px;
+    }
+
+    .part1{
+        height: 30vh;
+    }
+
+    .part1 .heading{
+        width: 100%;
+    }
+
+    .part1 h1{
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .part2 .images .row1{
+        grid-template-columns: 65% 35%;
+    }
+
+    .part2 .images .row2{
+        grid-template-columns: 30% 25% 45%;
+    }
+
+    .posts, .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

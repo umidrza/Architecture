@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 200;
+}
+
+::selection {
+    background: #fbc441;
+    color: #fff;
+}
+
+.container{
+    width: 1200px;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+article{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 0;
+}
+
+/* Navbar */
+nav{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    width: 200px;
+    cursor: pointer;
+}
+
+.nav-logo img{
+    width: 100%;
+}
+
+/* Nav icon */
+.nav-links{
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-links hr{
+    height: 1px;
+    margin: 10px 0;
+    border: 0px;
+    padding: 0px;
+    background-color: black;
+    transition: 300ms;
+}
+
+.nav-links:hover hr{
+    margin: 15px 0;
+}
+
+.nav-links:active #hr1 {
+    margin: 0;
+    transform: rotate(-45deg);
+}
+
+.nav-links:active #hr2 {
+    margin: 0;
+    transform: rotate(45deg);
+}
+
+/* Fixed button */
+
+#fixed-button{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 300ms;
+    z-index: 10;
+}
+
+#fixed-button:hover{
+    background-color: rgb(121, 175, 40);
+}
+
+/* Part1 */
+.part1{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://demo.kaliumtheme.com/architecture/wp-content/uploads/2018/05/slider-image-third.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.part1 .heading {
+    width: 50%;
+}
+
+.part1 h1 {
+    font-size: 60px;
+}
+
+.part1 button {
+    background-color: inherit;
+    color: black;
+    padding: 10px 30px;
+    border: 1px solid black;
+    margin-top: 20px;
+    font-weight: 300;
+    transition: 300ms;
+}
+
+.part1 button:hover{
+    background-color: black;
+    color: white;
+}
+
+/* Part2 */
+.part2 article {
+    gap: 30px;
+}
+
+.part2 article h1{
+    font-size: 38px;
+    grid-row: span 2;
+}
+
+.part2 .images {
+    display: grid;
+    gap: 30px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.part2 .images .row1{
+    display: grid;
+    grid-template-rows: 300px;
+    gap: 30px;
+}
+
+.part2 .images .row2{
+    display: grid;
+    grid-template-rows: 300px;
+    gap: 30px;
+}
+
+.part2 .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Part3 */
+.part3 {
+    background-color: #222222;
+    color: white;
+    margin: 10px 0px;
+}
+
+.part3 .article-box{
+    border-bottom: 1px solid #333333;
+}
+
+.part3 p{
+    color: rgb(190, 190, 190);
+}
+
+/* Part4 */
+.part4{
+    background-color: rgb(250, 250, 250);
+    padding-bottom: 40px;
+}
+
+article h1{
+    font-size: 30px;
+}
+
+.partners{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.partner{
+    background-color: white;
+}
+
+.partner img{
+    width: 100%;
+}
+
+.partner .text{
+    width: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Part5 */
+
+.part5{
+    background-color: rgb(236, 236, 236);
+}
+
+.posts{
+    display: grid;
+    gap: 70px;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 20px;
+}
+
+.post .faded-img{
+    grid-row: span 2;
+}
+
+.post img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    grid-row: span 2;
+}
+
+.part5 h2{
+    padding: 40px 0;
+    display: inline-block;
+}
+
+/* Footer */
+.footer{
+    display: grid;
+    align-items: center;
+}
+
+.footer ul {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-end;
+}
+
+.footer li{
+    padding: 15px;
+}
+
+/* Animations */
+.faded-text {
+    transition: 400ms;
+}
+
+.faded-text:hover{
+    opacity: 0.5;
+}
+
+.faded-img img{
+    transition: 500ms;
+}
+
+.faded-img:hover img{
+    opacity: 0.1;
+}
+
+.img-text{
+    position: relative;
+}
+
+.images .text{
+    bottom: 8%;
+    left: 5%;
+}
+
+.img-text .text{
+    position: absolute;
+    opacity: 0;
+    transition: 600ms;
+}
+
+.img-text:hover .text{
+    opacity: 1;
+}
+
+.images .img-text:hover .text{
+    bottom: 10%;
+}
+
+a{
+    display: inline-block;
+    position: relative;
+    color: black;
+    overflow: hidden;
+    
+}
+a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    transition: 300ms;
+}
+
+a:hover::after{
+    right: 0;
+}
