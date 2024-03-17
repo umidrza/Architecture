@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,25 +16,31 @@
     color: #fff;
 }
 
-.container{
+.container {
     width: 1200px;
     max-width: 85%;
     margin: 0 auto;
 }
 
-article{
+article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 40px 0;
 }
 
+.blur {
+    filter: blur(150px);
+    pointer-events: none;
+}
+
 /* Navbar */
-nav{
+nav {
     width: 100%;
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav-logo {
@@ -42,17 +48,17 @@ nav{
     cursor: pointer;
 }
 
-.nav-logo img{
+.nav-logo img {
     width: 100%;
 }
 
 /* Nav icon */
-.nav-links{
+#icon {
     width: 30px;
     cursor: pointer;
 }
 
-.nav-links hr{
+hr {
     height: 1px;
     margin: 10px 0;
     border: 0px;
@@ -61,23 +67,60 @@ nav{
     transition: 300ms;
 }
 
-.nav-links:hover hr{
+#icon:hover hr {
     margin: 15px 0;
 }
 
-.nav-links:active #hr1 {
-    margin: 0;
+.rotated-hr1 {
+    margin: 0 !important;
     transform: rotate(-45deg);
 }
 
-.nav-links:active #hr2 {
-    margin: 0;
+.rotated-hr2 {
+    margin: 0 !important;
     transform: rotate(45deg);
 }
 
-/* Fixed button */
+main {
+    transition: 300ms;
+}
 
-#fixed-button{
+/* Menu */
+#menu {
+    position: fixed;
+    left: 10%;
+    top: 60px;
+    width: 80%;
+    height: 100vh;
+    overflow: auto;
+    z-index: 2;
+    transition: 300ms;
+}
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+#menu ul>li {
+    font-weight: 400;
+    font-size: 48px;
+}
+
+#menu ul li ul li {
+    font-size: 32px;
+}
+
+#menu ul li:nth-of-type(5) ul {
+    display: none;
+}
+
+#menu ul li:nth-of-type(5):hover ul {
+    display: block;
+}
+
+/* Fixed button */
+#fixed-button {
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -92,12 +135,12 @@ nav{
     z-index: 10;
 }
 
-#fixed-button:hover{
+#fixed-button:hover {
     background-color: rgb(121, 175, 40);
 }
 
 /* Part1 */
-.part1{
+.part1 {
     width: 100%;
     height: 100vh;
     background-image: url("https://demo.kaliumtheme.com/architecture/wp-content/uploads/2018/05/slider-image-third.jpg");
@@ -126,7 +169,7 @@ nav{
     transition: 300ms;
 }
 
-.part1 button:hover{
+.part1 button:hover {
     background-color: black;
     color: white;
 }
@@ -136,7 +179,7 @@ nav{
     gap: 30px;
 }
 
-.part2 article h1{
+.part2 article h1 {
     font-size: 38px;
     grid-row: span 2;
 }
@@ -148,13 +191,13 @@ nav{
     margin-bottom: 30px;
 }
 
-.part2 .images .row1{
+.part2 .images .row1 {
     display: grid;
     grid-template-rows: 300px;
     gap: 30px;
 }
 
-.part2 .images .row2{
+.part2 .images .row2 {
     display: grid;
     grid-template-rows: 300px;
     gap: 30px;
@@ -174,40 +217,40 @@ nav{
     margin: 10px 0px;
 }
 
-.part3 .article-box{
+.part3 .article-box {
     border-bottom: 1px solid #333333;
 }
 
-.part3 p{
+.part3 p {
     color: rgb(190, 190, 190);
 }
 
 /* Part4 */
-.part4{
+.part4 {
     background-color: rgb(250, 250, 250);
     padding-bottom: 40px;
 }
 
-article h1{
+article h1 {
     font-size: 30px;
 }
 
-.partners{
+.partners {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 30px;
 }
 
-.partner{
+.partner {
     background-color: white;
 }
 
-.partner img{
+.partner img {
     width: 100%;
 }
 
-.partner .text{
+.partner .text {
     width: 55%;
     top: 50%;
     left: 50%;
@@ -217,11 +260,11 @@ article h1{
 
 /* Part5 */
 
-.part5{
+.part5 {
     background-color: rgb(236, 236, 236);
 }
 
-.posts{
+.posts {
     display: grid;
     gap: 70px;
 }
@@ -232,24 +275,24 @@ article h1{
     column-gap: 20px;
 }
 
-.post .faded-img{
+.post .faded-img {
     grid-row: span 2;
 }
 
-.post img{
+.post img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     grid-row: span 2;
 }
 
-.part5 h2{
+.part5 h2 {
     padding: 40px 0;
     display: inline-block;
 }
 
 /* Footer */
-.footer{
+.footer {
     display: grid;
     align-items: center;
 }
@@ -260,7 +303,7 @@ article h1{
     justify-content: flex-end;
 }
 
-.footer li{
+.footer li {
     padding: 15px;
 }
 
@@ -269,49 +312,50 @@ article h1{
     transition: 400ms;
 }
 
-.faded-text:hover{
+.faded-text:hover {
     opacity: 0.5;
 }
 
-.faded-img img{
+.faded-img img {
     transition: 500ms;
 }
 
-.faded-img:hover img{
+.faded-img:hover img {
     opacity: 0.1;
 }
 
-.img-text{
+.img-text {
     position: relative;
 }
 
-.images .text{
+.images .text {
     bottom: 8%;
     left: 5%;
 }
 
-.img-text .text{
+.img-text .text {
     position: absolute;
     opacity: 0;
     transition: 600ms;
 }
 
-.img-text:hover .text{
+.img-text:hover .text {
     opacity: 1;
 }
 
-.images .img-text:hover .text{
+.images .img-text:hover .text {
     bottom: 10%;
 }
 
-a{
+a {
     display: inline-block;
     position: relative;
     color: black;
     overflow: hidden;
-    
+
 }
-a::after{
+
+a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -322,6 +366,6 @@ a::after{
     transition: 300ms;
 }
 
-a:hover::after{
+a:hover::after {
     right: 0;
 }
